@@ -332,6 +332,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="inline-block bg-[#40E0D0] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#00C2D1] transition-colors"
                     data-testid="map-link"
+                    style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 100 }}
                   >
                     View Map 🗺️
                   </a>
