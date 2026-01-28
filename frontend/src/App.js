@@ -79,12 +79,16 @@ function App() {
       {/* Music Control Button */}
       <motion.button
         onClick={toggleMute}
-        className="fixed bottom-6 right-6 z-[9999] bg-[#E0218A] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform cursor-pointer"
+        className="fixed bottom-6 right-6 bg-[#E0218A] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform cursor-pointer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         data-testid="music-toggle-button"
         aria-label={isMuted ? "Unmute music" : "Mute music"}
-        style={{ pointerEvents: 'auto' }}
+        style={{ 
+          pointerEvents: 'auto',
+          zIndex: 99999,
+          position: 'fixed'
+        }}
       >
         {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
       </motion.button>
