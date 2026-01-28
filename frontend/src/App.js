@@ -493,11 +493,10 @@ function App() {
             <div className="mt-8 text-center">
               <div className="bg-[#F0F8FF] rounded-2xl p-6 max-w-2xl mx-auto">
                 <p className="text-[#00a9ff] font-semibold text-lg mb-2">
-                  💡 Want to add your photos?
+                  💙 Beautiful Memories! 💗
                 </p>
                 <p className="text-[#1A1A1A] text-sm">
-                  You can add up to <strong>8-12 photos</strong> without slowing down the website. 
-                  For best performance, optimize photos to 800x800px and under 200KB each.
+                  Hover over each photo to see the caption. Can't wait to make more wonderful memories at the pool party!
                 </p>
               </div>
             </div>
