@@ -365,6 +365,140 @@ function App() {
             </motion.div>
           </motion.div>
 
+          {/* Countdown Timer */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-16 px-4"
+          >
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,169,255,0.3)]">
+              <div className="text-center mb-6">
+                <Clock className="w-12 h-12 mx-auto mb-3 text-[#00a9ff]" />
+                <h3 
+                  className="text-3xl md:text-4xl font-bold text-[#E0218A] mb-2"
+                  style={{ fontFamily: 'Fredoka, sans-serif' }}
+                >
+                  Countdown to the Party! ⏰
+                </h3>
+              </div>
+              
+              <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto" data-testid="countdown-timer">
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-gradient-to-br from-[#00a9ff] to-[#0084FF] text-white rounded-2xl p-4 mb-2">
+                    <div className="text-3xl md:text-5xl font-bold" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                      {countdown.days}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base font-semibold text-[#1A1A1A]">Days</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-gradient-to-br from-[#f063b1] to-[#E0218A] text-white rounded-2xl p-4 mb-2">
+                    <div className="text-3xl md:text-5xl font-bold" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                      {countdown.hours}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base font-semibold text-[#1A1A1A]">Hours</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-gradient-to-br from-[#F9D71C] to-[#FF6F61] text-white rounded-2xl p-4 mb-2">
+                    <div className="text-3xl md:text-5xl font-bold" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                      {countdown.minutes}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base font-semibold text-[#1A1A1A]">Minutes</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-gradient-to-br from-[#40E0D0] to-[#00a9ff] text-white rounded-2xl p-4 mb-2">
+                    <div className="text-3xl md:text-5xl font-bold" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                      {countdown.seconds}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base font-semibold text-[#1A1A1A]">Seconds</div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Photo Gallery */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-16 px-4"
+          >
+            <div className="text-center mb-8">
+              <h3 
+                className="text-3xl md:text-4xl font-bold text-[#00a9ff] mb-3"
+                style={{ fontFamily: 'Fredoka, sans-serif' }}
+              >
+                Pool Party Memories! 📸
+              </h3>
+              <p className="text-lg text-[#1A1A1A]">Celebrating our water-loving cuties!</p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
+              {[
+                { id: 1, caption: "Summer Fun" },
+                { id: 2, caption: "Pool Time" },
+                { id: 3, caption: "Making Waves" },
+                { id: 4, caption: "Splashing Around" },
+                { id: 5, caption: "Water Games" },
+                { id: 6, caption: "Best Friends" },
+                { id: 7, caption: "Happy Moments" },
+                { id: 8, caption: "Pool Pals" }
+              ].map((photo, index) => (
+                <motion.div
+                  key={photo.id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                  data-testid={`gallery-photo-${photo.id}`}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-[#00a9ff] via-[#40E0D0] to-[#f063b1] flex items-center justify-center">
+                    <div className="text-white text-center p-4">
+                      <div className="text-4xl mb-2">📷</div>
+                      <p className="text-sm font-semibold">{photo.caption}</p>
+                      <p className="text-xs opacity-80 mt-1">Add your photo here!</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <div className="bg-[#F0F8FF] rounded-2xl p-6 max-w-2xl mx-auto">
+                <p className="text-[#00a9ff] font-semibold text-lg mb-2">
+                  💡 Want to add your photos?
+                </p>
+                <p className="text-[#1A1A1A] text-sm">
+                  You can add up to <strong>8-12 photos</strong> without slowing down the website. 
+                  For best performance, optimize photos to 800x800px and under 200KB each.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Closing Message */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
