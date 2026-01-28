@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Volume2, VolumeX, Sun, MapPin, MessageCircle, Waves } from 'lucide-react';
+import { Volume2, VolumeX, Sun, MapPin, MessageCircle, Waves, Clock, Calendar } from 'lucide-react';
 import './App.css';
 
 function App() {
   const [isMuted, setIsMuted] = useState(true);
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const audioRef = useRef(null);
   const { scrollYProgress } = useScroll();
   
+  const partyDate = new Date('2026-03-21T09:00:00');
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
 
