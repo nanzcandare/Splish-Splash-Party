@@ -22,13 +22,21 @@ function App() {
 
   const toggleMute = () => {
     if (audioRef.current) {
-      if (isMuted) {
+      const newMutedState = !isMuted;
+      setIsMuted(newMutedState);
+      
+      if (!newMutedState) {
+        // Unmuting - play the audio
         audioRef.current.muted = false;
-        audioRef.current.play().catch(e => console.log('Play failed:', e));
+        audioRef.current.play().catch(e => {
+          console.log('Audio play failed:', e);
+          // If play fails, keep it muted
+          setIsMuted(true);
+        });
       } else {
+        // Muting
         audioRef.current.muted = true;
       }
-      setIsMuted(!isMuted);
     }
   };
 
