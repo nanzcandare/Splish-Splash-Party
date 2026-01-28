@@ -234,7 +234,8 @@ function App() {
             data-testid="hero-subtitle"
           >
             <span className="text-[#f063b1] font-bold drop-shadow-md">Niamh</span> is turning{' '}
-            <span className="text-[#f063b1] font-bold text-5xl md:text-8xl">7</span> and{' '}
+            <span className="text-[#f063b1] font-bold text-5xl md:text-8xl">7</span> and
+            <br />
             <span className="text-[#0084FF] font-bold drop-shadow-md">Khalev</span> is turning{' '}
             <span className="text-[#0084FF] font-bold text-5xl md:text-8xl">9</span>,
             <br />
