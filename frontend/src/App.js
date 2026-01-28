@@ -456,14 +456,14 @@ function App() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
               {[
-                { id: 1, caption: "Summer Fun" },
-                { id: 2, caption: "Pool Time" },
-                { id: 3, caption: "Making Waves" },
-                { id: 4, caption: "Splashing Around" },
-                { id: 5, caption: "Water Games" },
-                { id: 6, caption: "Best Friends" },
-                { id: 7, caption: "Happy Moments" },
-                { id: 8, caption: "Pool Pals" }
+                { id: 1, caption: "Testing the water", src: "https://drive.google.com/uc?export=view&id=1KIlho2RqkquRHZ2WRK3QCmx1Kf66gB_B" },
+                { id: 2, caption: "Bubble shower", src: "https://drive.google.com/uc?export=view&id=1ubediBep8hMrvrKQcrzif-PPkz81DVWF" },
+                { id: 3, caption: "Niamh swimming", src: "https://drive.google.com/uc?export=view&id=1HYRnVKVc2SygbWpbMnfvmFhgPnWeh9qW" },
+                { id: 4, caption: "Peter Pan and Tinkerbell", src: "https://drive.google.com/uc?export=view&id=15nE7ybUiAsD37zEoTXrU-aoHMSX5std7" },
+                { id: 5, caption: "Just Treat No Trick", src: "https://drive.google.com/uc?export=view&id=11Wp9Q-QvB1u78JI8fDScqhGB5NcQAMwm" },
+                { id: 6, caption: "Baguio City", src: "https://drive.google.com/uc?export=view&id=1orEuuaqsMj1ldrzmn2KDAk9fcYG0Z3h1" },
+                { id: 7, caption: "Making Sand Castle", src: "https://drive.google.com/uc?export=view&id=1obRqMcTUYM5A3ZFhmYZXtfl-lglzfAs5" },
+                { id: 8, caption: "Swimming at home", src: "https://drive.google.com/uc?export=view&id=1hUU-H65Z-w94XDJvR0n-o1iBIN1zoLZY" }
               ].map((photo, index) => (
                 <motion.div
                   key={photo.id}
@@ -472,15 +472,19 @@ function App() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, rotate: 2 }}
-                  className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                  className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
                   data-testid={`gallery-photo-${photo.id}`}
                 >
-                  <div className="aspect-square bg-gradient-to-br from-[#00a9ff] via-[#40E0D0] to-[#f063b1] flex items-center justify-center">
-                    <div className="text-white text-center p-4">
-                      <div className="text-4xl mb-2">📷</div>
-                      <p className="text-sm font-semibold">{photo.caption}</p>
-                      <p className="text-xs opacity-80 mt-1">Add your photo here!</p>
-                    </div>
+                  <img 
+                    src={photo.src} 
+                    alt={photo.caption}
+                    className="w-full h-full object-cover aspect-square"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <p className="text-white text-sm font-semibold p-4 w-full text-center">
+                      {photo.caption}
+                    </p>
                   </div>
                 </motion.div>
               ))}
