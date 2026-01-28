@@ -377,7 +377,7 @@ function App() {
             </motion.a>
 
             <motion.div 
-              className="mt-8 md:mt-12 text-[#00C2D1] text-base md:text-lg"
+              className="mt-8 md:mt-12 text-[#00a9ff] text-base md:text-lg"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
