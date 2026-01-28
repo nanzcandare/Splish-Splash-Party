@@ -210,12 +210,12 @@ function App() {
             variants={itemVariants}
             data-testid="hero-subtitle"
           >
-            <span className="text-[#E0218A] font-bold drop-shadow-md">Niamh</span> is turning{' '}
-            <span className="text-[#F9D71C] font-bold text-4xl md:text-5xl">7</span> and{' '}
-            <span className="text-[#E0218A] font-bold drop-shadow-md">Khalev</span> is turning{' '}
-            <span className="text-[#F9D71C] font-bold text-4xl md:text-5xl">9</span>,
+            <span className="text-[#f063b1] font-bold drop-shadow-md">Niamh</span> is turning{' '}
+            <span className="text-[#f063b1] font-bold text-4xl md:text-5xl">7</span> and{' '}
+            <span className="text-[#0084FF] font-bold drop-shadow-md">Khalev</span> is turning{' '}
+            <span className="text-[#0084FF] font-bold text-4xl md:text-5xl">9</span>,
             <br />
-            Jump in the pool — it's party time! 🎉🌊
+            Jump in the pool — it's party time! 🎉
           </motion.p>
 
           <motion.div 
