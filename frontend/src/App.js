@@ -222,7 +222,7 @@ function App() {
             variants={itemVariants}
             data-testid="hero-title"
           >
-            ☀️💦 <span className="text-[#00a9ff]">Splish</span>, <span className="text-[#f063b1]">Splash</span> 💦☀️
+            ☀️💦 <span className="text-[#0084FF]">Splish</span>, <span className="text-[#f063b1]">Splash</span> 💦☀️
             <br />
             <span className="text-[#F9D71C] drop-shadow-lg">It's a Birthday Bash!</span>
           </motion.h1>
