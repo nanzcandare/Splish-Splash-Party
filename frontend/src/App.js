@@ -71,9 +71,10 @@ function App() {
         muted={isMuted}
         data-testid="background-music"
         preload="auto"
+        crossOrigin="anonymous"
       >
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-and-joyful-children-14.mp3" type="audio/mpeg" />
-        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4a4e8e05d5.mp3" type="audio/mpeg" />
+        <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Music Control Button */}
