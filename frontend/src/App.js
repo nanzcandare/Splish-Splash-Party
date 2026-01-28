@@ -544,13 +544,13 @@ function App() {
       </section>
 
       {/* Footer Wave Animation */}
-      <div className="relative h-24 md:h-32 bg-gradient-to-b from-[#F0F8FF] to-[#40E0D0] overflow-hidden">
+      <div className="relative h-24 md:h-32 bg-gradient-to-b from-[#F0F8FF] to-[#00a9ff] overflow-hidden">
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute bottom-0 left-0 right-0 h-12 md:h-16"
             style={{
-              background: `rgba(0, 194, 209, ${0.3 - i * 0.1})`,
+              background: `rgba(0, 169, 255, ${0.3 - i * 0.1})`,
               borderRadius: '50% 50% 0 0'
             }}
             animate={{
