@@ -303,7 +303,8 @@ function App() {
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
                   <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-2">March 21, 2026</p>
-                  <p className="text-[#00C2D1] font-semibold">⏰ 9:00 in the morning</p>
+                  <p className="text-[#00a9ff] font-semibold">⏰ 9:00 in the morning</p>
+                  <p className="text-[#00a9ff] font-semibold">9am to 5pm</p>
                 </div>
               </div>
             </motion.div>
