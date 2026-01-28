@@ -368,6 +368,7 @@ function App() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-testid="messenger-button"
+              style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 100 }}
             >
               <MessageCircle size={24} />
               Message Us on Messenger
