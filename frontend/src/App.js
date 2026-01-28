@@ -355,7 +355,7 @@ function App() {
             >
               So bring your splash and bring your cheer,
               <br />
-              The coolest pool party is here! 🏖️🎈💙
+              The coolest pool party is here!
             </h2>
 
             {/* Messenger Button */}
