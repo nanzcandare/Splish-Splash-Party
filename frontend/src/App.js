@@ -348,9 +348,9 @@ function App() {
                   Where? 📍
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
-                  <p className="font-semibold mb-2">Casa Ylaya</p>
-                  <p className="text-[#00a9ff]">Prinza St., Pasong Kawayan II</p>
-                  <p className="text-[#00a9ff] mb-3">General Trias, Cavite</p>
+                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-3">Casa Ylaya</p>
+                  <p className="text-[#00a9ff] font-semibold mb-1">Prinza St., Pasong Kawayan II</p>
+                  <p className="text-[#00a9ff] font-semibold mb-3">General Trias, Cavite</p>
                   <a 
                     href="https://maps.app.goo.gl/ToHe9XieUiGbqnu88"
                     target="_blank"
