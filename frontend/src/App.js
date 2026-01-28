@@ -268,7 +268,7 @@ function App() {
             className="text-center mb-12 md:mb-16 px-4"
           >
             <h2 
-              className="text-2xl md:text-5xl font-bold text-[#00C2D1] mb-4 leading-tight"
+              className="text-2xl md:text-5xl font-bold text-[#00a9ff] mb-4 leading-tight"
               style={{ fontFamily: 'Fredoka, sans-serif' }}
               data-testid="details-heading"
             >
