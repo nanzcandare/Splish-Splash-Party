@@ -15,14 +15,19 @@ function App() {
     if (audioRef.current) {
       audioRef.current.volume = 0.3;
       audioRef.current.play().catch(() => {
-        console.log('Audio autoplay blocked');
+        console.log('Audio autoplay blocked - user interaction required');
       });
     }
   }, []);
 
   const toggleMute = () => {
     if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
+      if (isMuted) {
+        audioRef.current.muted = false;
+        audioRef.current.play().catch(e => console.log('Play failed:', e));
+      } else {
+        audioRef.current.muted = true;
+      }
       setIsMuted(!isMuted);
     }
   };
@@ -51,14 +56,16 @@ function App() {
 
   return (
     <div className="App">
-      {/* Background Audio */}
+      {/* Background Audio - Using a more reliable source */}
       <audio 
         ref={audioRef} 
         loop 
         muted={isMuted}
         data-testid="background-music"
+        preload="auto"
       >
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-and-joyful-children-14.mp3" type="audio/mpeg" />
+        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4a4e8e05d5.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Music Control Button */}
@@ -68,6 +75,7 @@ function App() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         data-testid="music-toggle-button"
+        aria-label={isMuted ? "Unmute music" : "Mute music"}
       >
         {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
       </motion.button>
@@ -169,11 +177,11 @@ function App() {
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <Waves className="w-20 h-20 mx-auto mb-4 text-white" />
+            <Waves className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 text-white" />
           </motion.div>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight"
             style={{ fontFamily: 'Fredoka, sans-serif' }}
             variants={itemVariants}
             data-testid="hero-title"
@@ -184,15 +192,15 @@ function App() {
           </motion.h1>
 
           <motion.p 
-            className="text-2xl md:text-4xl text-white font-medium leading-relaxed"
+            className="text-xl md:text-4xl text-white font-medium leading-relaxed px-2"
             style={{ fontFamily: 'Fredoka, sans-serif' }}
             variants={itemVariants}
             data-testid="hero-subtitle"
           >
             <span className="text-[#E0218A] font-bold drop-shadow-md">Niamh</span> is turning{' '}
-            <span className="text-[#F9D71C] font-bold text-5xl">7</span> and{' '}
+            <span className="text-[#F9D71C] font-bold text-4xl md:text-5xl">7</span> and{' '}
             <span className="text-[#E0218A] font-bold drop-shadow-md">Khalev</span> is turning{' '}
-            <span className="text-[#F9D71C] font-bold text-5xl">9</span>,
+            <span className="text-[#F9D71C] font-bold text-4xl md:text-5xl">9</span>,
             <br />
             Jump in the pool — it's party time! 🎉🌊
           </motion.p>
@@ -204,7 +212,7 @@ function App() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="text-white text-xl"
+              className="text-white text-lg md:text-xl"
             >
               ↓ Scroll for Details ↓
             </motion.div>
@@ -216,7 +224,7 @@ function App() {
       <section className="details-section" data-testid="details-section">
         {/* Decorative Background Elements */}
         <motion.div
-          className="floating-element text-8xl opacity-20"
+          className="floating-element text-6xl md:text-8xl opacity-20"
           style={{ top: '5%', right: '5%' }}
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -225,7 +233,7 @@ function App() {
         </motion.div>
 
         <motion.div
-          className="floating-element text-9xl opacity-20"
+          className="floating-element text-7xl md:text-9xl opacity-20"
           style={{ bottom: '10%', left: '10%' }}
           animate={{ 
             y: [0, -20, 0],
@@ -243,10 +251,10 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16 px-4"
           >
             <h2 
-              className="text-4xl md:text-5xl font-bold text-[#00C2D1] mb-4"
+              className="text-2xl md:text-5xl font-bold text-[#00C2D1] mb-4 leading-tight"
               style={{ fontFamily: 'Fredoka, sans-serif' }}
               data-testid="details-heading"
             >
@@ -268,19 +276,19 @@ function App() {
             <motion.div
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="blob-card bg-white p-8 shadow-[0_20px_50px_rgba(0,194,209,0.3)]"
+              className="blob-card bg-white p-6 md:p-8 shadow-[0_20px_50px_rgba(0,194,209,0.3)]"
               data-testid="date-time-card"
             >
               <div className="text-center">
-                <Sun className="w-16 h-16 mx-auto mb-4 text-[#F9D71C]" />
+                <Sun className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 text-[#F9D71C]" />
                 <h3 
-                  className="text-2xl md:text-3xl font-semibold text-[#1A1A1A] mb-4"
+                  className="text-xl md:text-3xl font-semibold text-[#1A1A1A] mb-4"
                   style={{ fontFamily: 'Fredoka, sans-serif' }}
                 >
                   When? 📅
                 </h3>
-                <div className="text-lg md:text-xl text-[#1A1A1A]">
-                  <p className="font-bold text-[#E0218A] text-2xl mb-2">March 21, 2026</p>
+                <div className="text-base md:text-xl text-[#1A1A1A]">
+                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-2">March 21, 2026</p>
                   <p className="text-[#00C2D1] font-semibold">⏰ 9:00 in the morning</p>
                 </div>
               </div>
@@ -290,18 +298,18 @@ function App() {
             <motion.div
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="blob-card bg-white p-8 shadow-[0_20px_50px_rgba(0,194,209,0.3)]"
+              className="blob-card bg-white p-6 md:p-8 shadow-[0_20px_50px_rgba(0,194,209,0.3)]"
               data-testid="location-card"
             >
               <div className="text-center">
-                <MapPin className="w-16 h-16 mx-auto mb-4 text-[#FF6F61]" />
+                <MapPin className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 text-[#FF6F61]" />
                 <h3 
-                  className="text-2xl md:text-3xl font-semibold text-[#1A1A1A] mb-4"
+                  className="text-xl md:text-3xl font-semibold text-[#1A1A1A] mb-4"
                   style={{ fontFamily: 'Fredoka, sans-serif' }}
                 >
                   Where? 📍
                 </h3>
-                <div className="text-lg md:text-xl text-[#1A1A1A]">
+                <div className="text-base md:text-xl text-[#1A1A1A]">
                   <p className="font-semibold mb-2">Casa Ylaya</p>
                   <p className="text-[#00C2D1]">Prinza St., Pasong Kawayan II</p>
                   <p className="text-[#00C2D1] mb-3">General Trias, Cavite</p>
@@ -325,10 +333,10 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-center mt-16 px-4"
+            className="text-center mt-12 md:mt-16 px-4"
           >
             <h2 
-              className="text-3xl md:text-5xl font-bold text-[#E0218A] mb-8"
+              className="text-2xl md:text-5xl font-bold text-[#E0218A] mb-6 md:mb-8 leading-tight"
               style={{ fontFamily: 'Fredoka, sans-serif' }}
               data-testid="closing-message"
             >
@@ -342,17 +350,17 @@ function App() {
               href="https://m.me/nanz.aguada"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#0084FF] text-white px-10 py-5 rounded-full font-bold text-xl shadow-2xl message-button transition-all"
+              className="inline-flex items-center gap-3 bg-[#0084FF] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl shadow-2xl message-button transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-testid="messenger-button"
             >
-              <MessageCircle size={28} />
+              <MessageCircle size={24} />
               Message Us on Messenger
             </motion.a>
 
             <motion.div 
-              className="mt-12 text-[#00C2D1] text-lg"
+              className="mt-8 md:mt-12 text-[#00C2D1] text-base md:text-lg"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -363,11 +371,11 @@ function App() {
       </section>
 
       {/* Footer Wave Animation */}
-      <div className="relative h-32 bg-gradient-to-b from-[#F0F8FF] to-[#40E0D0] overflow-hidden">
+      <div className="relative h-24 md:h-32 bg-gradient-to-b from-[#F0F8FF] to-[#40E0D0] overflow-hidden">
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute bottom-0 left-0 right-0 h-16"
+            className="absolute bottom-0 left-0 right-0 h-12 md:h-16"
             style={{
               background: `rgba(0, 194, 209, ${0.3 - i * 0.1})`,
               borderRadius: '50% 50% 0 0'
