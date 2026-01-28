@@ -326,13 +326,13 @@ function App() {
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
                   <p className="font-semibold mb-2">Casa Ylaya</p>
-                  <p className="text-[#00C2D1]">Prinza St., Pasong Kawayan II</p>
-                  <p className="text-[#00C2D1] mb-3">General Trias, Cavite</p>
+                  <p className="text-[#00a9ff]">Prinza St., Pasong Kawayan II</p>
+                  <p className="text-[#00a9ff] mb-3">General Trias, Cavite</p>
                   <a 
                     href="https://maps.app.goo.gl/ToHe9XieUiGbqnu88"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-[#40E0D0] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#00C2D1] transition-colors"
+                    className="inline-block bg-[#00a9ff] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0084FF] transition-colors"
                     data-testid="map-link"
                     style={{ pointerEvents: 'auto', cursor: 'pointer', position: 'relative', zIndex: 100 }}
                   >
