@@ -206,15 +206,15 @@ function App() {
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-4xl text-white font-medium leading-relaxed px-2"
+            className="text-lg md:text-3xl text-white font-medium leading-relaxed px-2"
             style={{ fontFamily: 'Fredoka, sans-serif' }}
             variants={itemVariants}
             data-testid="hero-subtitle"
           >
-            <span className="text-[#f063b1] font-bold drop-shadow-md">Niamh</span> is turning{' '}
-            <span className="text-[#f063b1] font-bold text-4xl md:text-5xl">7</span> and{' '}
-            <span className="text-[#0084FF] font-bold drop-shadow-md">Khalev</span> is turning{' '}
-            <span className="text-[#0084FF] font-bold text-4xl md:text-5xl">9</span>,
+            <span className="text-[#f063b1] font-bold drop-shadow-md text-2xl md:text-4xl">Niamh</span> is turning{' '}
+            <span className="text-[#f063b1] font-bold text-3xl md:text-5xl">7</span> and{' '}
+            <span className="text-[#0084FF] font-bold drop-shadow-md text-2xl md:text-4xl">Khalev</span> is turning{' '}
+            <span className="text-[#0084FF] font-bold text-3xl md:text-5xl">9</span>,
             <br />
             Jump in the pool — it's party time! 🎉
           </motion.p>
