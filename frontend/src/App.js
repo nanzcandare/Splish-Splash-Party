@@ -456,14 +456,14 @@ function App() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
               {[
-                { id: 1, caption: "Testing the water", src: "https://drive.google.com/uc?export=view&id=1KIlho2RqkquRHZ2WRK3QCmx1Kf66gB_B" },
-                { id: 2, caption: "Bubble shower", src: "https://drive.google.com/uc?export=view&id=1ubediBep8hMrvrKQcrzif-PPkz81DVWF" },
-                { id: 3, caption: "Niamh swimming", src: "https://drive.google.com/uc?export=view&id=1HYRnVKVc2SygbWpbMnfvmFhgPnWeh9qW" },
-                { id: 4, caption: "Peter Pan and Tinkerbell", src: "https://drive.google.com/uc?export=view&id=15nE7ybUiAsD37zEoTXrU-aoHMSX5std7" },
-                { id: 5, caption: "Just Treat No Trick", src: "https://drive.google.com/uc?export=view&id=11Wp9Q-QvB1u78JI8fDScqhGB5NcQAMwm" },
-                { id: 6, caption: "Baguio City", src: "https://drive.google.com/uc?export=view&id=1orEuuaqsMj1ldrzmn2KDAk9fcYG0Z3h1" },
-                { id: 7, caption: "Making Sand Castle", src: "https://drive.google.com/uc?export=view&id=1obRqMcTUYM5A3ZFhmYZXtfl-lglzfAs5" },
-                { id: 8, caption: "Swimming at home", src: "https://drive.google.com/uc?export=view&id=1hUU-H65Z-w94XDJvR0n-o1iBIN1zoLZY" }
+                { id: 1, caption: "Testing the water", src: "https://drive.google.com/thumbnail?id=1KIlho2RqkquRHZ2WRK3QCmx1Kf66gB_B&sz=w800" },
+                { id: 2, caption: "Bubble shower", src: "https://drive.google.com/thumbnail?id=1ubediBep8hMrvrKQcrzif-PPkz81DVWF&sz=w800" },
+                { id: 3, caption: "Niamh swimming", src: "https://drive.google.com/thumbnail?id=1HYRnVKVc2SygbWpbMnfvmFhgPnWeh9qW&sz=w800" },
+                { id: 4, caption: "Peter Pan and Tinkerbell", src: "https://drive.google.com/thumbnail?id=15nE7ybUiAsD37zEoTXrU-aoHMSX5std7&sz=w800" },
+                { id: 5, caption: "Just Treat No Trick", src: "https://drive.google.com/thumbnail?id=11Wp9Q-QvB1u78JI8fDScqhGB5NcQAMwm&sz=w800" },
+                { id: 6, caption: "Baguio City", src: "https://drive.google.com/thumbnail?id=1orEuuaqsMj1ldrzmn2KDAk9fcYG0Z3h1&sz=w800" },
+                { id: 7, caption: "Making Sand Castle", src: "https://drive.google.com/thumbnail?id=1obRqMcTUYM5A3ZFhmYZXtfl-lglzfAs5&sz=w800" },
+                { id: 8, caption: "Swimming at home", src: "https://drive.google.com/thumbnail?id=1hUU-H65Z-w94XDJvR0n-o1iBIN1zoLZY&sz=w800" }
               ].map((photo, index) => (
                 <motion.div
                   key={photo.id}
@@ -472,7 +472,7 @@ function App() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, rotate: 2 }}
-                  className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
+                  className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group bg-gradient-to-br from-[#00a9ff] via-[#40E0D0] to-[#f063b1]"
                   data-testid={`gallery-photo-${photo.id}`}
                 >
                   <img 
@@ -480,6 +480,13 @@ function App() {
                     alt={photo.caption}
                     className="w-full h-full object-cover aspect-square"
                     loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full h-full flex items-center justify-center text-white text-center p-4';
+                      fallback.innerHTML = `<div><div class="text-4xl mb-2">📷</div><p class="text-sm font-semibold">${photo.caption}</p></div>`;
+                      e.target.parentElement.appendChild(fallback);
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <p className="text-white text-sm font-semibold p-4 w-full text-center">
