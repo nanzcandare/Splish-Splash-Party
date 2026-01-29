@@ -86,17 +86,15 @@ function App() {
 
   return (
     <div className="App">
-      {/* Background Audio - Using a more reliable source */}
+      {/* Background Audio - Summer Sound by Aylex */}
       <audio 
         ref={audioRef} 
         loop 
         muted={isMuted}
         data-testid="background-music"
         preload="auto"
-        crossOrigin="anonymous"
       >
-        <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        <source src="/audio/summer-sound.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Music Control Button */}
@@ -239,7 +237,9 @@ function App() {
             <span className="text-[#0084FF] font-bold drop-shadow-md">Khalev</span> is turning{' '}
             <span className="text-[#0084FF] font-bold text-5xl md:text-8xl">9</span>,
             <br />
-            Jump in the pool — it's party time! 🎉
+            Jump in the pool
+            <br />
+            — it's party time! 🎉
           </motion.p>
 
           <motion.div 
@@ -457,14 +457,14 @@ function App() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
               {[
-                { id: 1, caption: "Testing the water", src: "https://drive.google.com/thumbnail?id=1KIlho2RqkquRHZ2WRK3QCmx1Kf66gB_B&sz=w800" },
-                { id: 2, caption: "Bubble shower", src: "https://drive.google.com/thumbnail?id=1ubediBep8hMrvrKQcrzif-PPkz81DVWF&sz=w800" },
-                { id: 3, caption: "Niamh swimming", src: "https://drive.google.com/thumbnail?id=1HYRnVKVc2SygbWpbMnfvmFhgPnWeh9qW&sz=w800" },
-                { id: 4, caption: "Peter Pan and Tinkerbell", src: "https://drive.google.com/thumbnail?id=15nE7ybUiAsD37zEoTXrU-aoHMSX5std7&sz=w800" },
-                { id: 5, caption: "Just Treat No Trick", src: "https://drive.google.com/thumbnail?id=11Wp9Q-QvB1u78JI8fDScqhGB5NcQAMwm&sz=w800" },
-                { id: 6, caption: "Baguio City", src: "https://drive.google.com/thumbnail?id=1orEuuaqsMj1ldrzmn2KDAk9fcYG0Z3h1&sz=w800" },
-                { id: 7, caption: "Making Sand Castle", src: "https://drive.google.com/thumbnail?id=1obRqMcTUYM5A3ZFhmYZXtfl-lglzfAs5&sz=w800" },
-                { id: 8, caption: "Swimming at home", src: "https://drive.google.com/thumbnail?id=1hUU-H65Z-w94XDJvR0n-o1iBIN1zoLZY&sz=w800" }
+                { id: 1, caption: "Testing the water", src: "/images/photo1.jpg" },
+                { id: 2, caption: "Bubble shower", src: "/images/photo2.jpg" },
+                { id: 3, caption: "Niamh swimming", src: "/images/photo3.jpg" },
+                { id: 4, caption: "Peter Pan and Tinkerbell", src: "/images/photo4.jpg" },
+                { id: 5, caption: "Just Treat No Trick", src: "/images/photo5.jpg" },
+                { id: 6, caption: "Baguio City", src: "/images/photo6.jpg" },
+                { id: 7, caption: "Making Sand Castle", src: "/images/photo7.jpg" },
+                { id: 8, caption: "Swimming at home", src: "/images/photo8.jpg" }
               ].map((photo, index) => (
                 <motion.div
                   key={photo.id}
