@@ -220,9 +220,9 @@ function App() {
             variants={itemVariants}
             data-testid="hero-title"
           >
-            ☀️💦 <span className="text-[#0084FF]">Splish</span>, <span className="text-[#f063b1]">Splash</span> 💦☀️
+            🌞💦 <span className="text-[#0084FF]">Splish</span>, <span className="text-[#f063b1]">Splash</span> 💦🌞
             <br />
-            <span className="text-[#F9D71C] drop-shadow-lg">It's a Birthday Bash!</span>
+            <span>It's a Birthday Bash!</span>
           </motion.h1>
 
           <motion.p 
@@ -231,15 +231,15 @@ function App() {
             variants={itemVariants}
             data-testid="hero-subtitle"
           >
-            <span className="text-[#f063b1] font-bold drop-shadow-md">Niamh</span> is turning{' '}
-            <span className="text-[#f063b1] font-bold text-5xl md:text-8xl">7</span> and
+            <span className="text-[#f063b1] font-bold ">Niamh</span> is turning{' '}
+            <span className="text-[#f063b1] font-bold ">7</span> and
             <br />
-            <span className="text-[#0084FF] font-bold drop-shadow-md">Khalev</span> is turning{' '}
-            <span className="text-[#0084FF] font-bold text-5xl md:text-8xl">9</span>,
+            <span className="text-[#0084FF] font-bold ">Khalev</span> is turning{' '}
+            <span className="text-[#0084FF] font-bold ">9</span>,
             <br />
             Jump in the pool
             <br />
-            — it's party time! 🎉
+            it's party time! 🎉
           </motion.p>
 
           <motion.div 
@@ -325,7 +325,7 @@ function App() {
                   When? 📅
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
-                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-2">March 21, 2026</p>
+                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-2">Saturday March 21, 2026</p>
                   <p className="text-[#00a9ff] font-semibold">⏰ 9:00 in the morning</p>
                   <p className="text-[#00a9ff] font-semibold">up to 5pm</p>
                 </div>
@@ -348,7 +348,7 @@ function App() {
                   Where? 📍
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
-                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-3">Casa Ylaya</p>
+                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-3">📍Casa Ylaya</p>
                   <p className="text-[#00a9ff] font-semibold mb-1">Prinza St., Pasong Kawayan II</p>
                   <p className="text-[#00a9ff] font-semibold mb-3">General Trias, Cavite</p>
                   <a 
@@ -450,9 +450,8 @@ function App() {
                 className="text-3xl md:text-4xl font-bold text-[#00a9ff] mb-3"
                 style={{ fontFamily: 'Fredoka, sans-serif' }}
               >
-                Pool Party Memories! 📸
+                Celebrating our water-loving cuties! 📸
               </h3>
-              <p className="text-lg text-[#1A1A1A]">Celebrating our water-loving cuties!</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
