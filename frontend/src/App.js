@@ -4,7 +4,7 @@ import { Volume2, VolumeX, Sun, MapPin, MessageCircle, Waves, Clock, Calendar } 
 import './App.css';
 
 function App() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const audioRef = useRef(null);
   const { scrollYProgress } = useScroll();
