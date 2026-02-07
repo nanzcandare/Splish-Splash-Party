@@ -326,7 +326,7 @@ function App() {
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
                   <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-2">Saturday March 21, 2026</p>
-                  <p className="text-[#00a9ff] font-semibold">⏰ 9:00 in the morning</p>
+                  <p className="text-[#00a9ff] font-semibold">⏰ 8:00 in the morning</p>
                   <p className="text-[#00a9ff] font-semibold">up to 5pm</p>
                 </div>
               </div>
@@ -348,8 +348,8 @@ function App() {
                   Where? 📍
                 </h3>
                 <div className="text-base md:text-xl text-[#1A1A1A]">
-                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-3">📍Casa Ylaya</p>
-                  <p className="text-[#00a9ff] font-semibold mb-1">Prinza St., Pasong Kawayan II</p>
+                  <p className="font-bold text-[#E0218A] text-xl md:text-2xl mb-3">Casa Ylaya</p>
+                  <p className="text-[#00a9ff] font-semibold mb-1">📍Prinza St., Pasong Kawayan II</p>
                   <p className="text-[#00a9ff] font-semibold mb-3">General Trias, Cavite</p>
                   <a 
                     href="https://maps.app.goo.gl/ToHe9XieUiGbqnu88"
@@ -456,14 +456,14 @@ function App() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
               {[
-                { id: 1, caption: "Testing the water", src: `${process.env.PUBLIC_URL}/images/photo1.jpg` },
-                { id: 2, caption: "Bubble shower", src: `${process.env.PUBLIC_URL}/images/photo2.jpg` },
-                { id: 3, caption: "Niamh swimming", src: `${process.env.PUBLIC_URL}/images/photo3.jpg` },
-                { id: 4, caption: "Peter Pan and Tinkerbell", src: `${process.env.PUBLIC_URL}/images/photo4.jpg` },
-                { id: 5, caption: "Just Treat No Trick", src: `${process.env.PUBLIC_URL}/images/photo5.jpg` },
+                { id: 1, caption: "La Traviesa Hotel Resort", src: `${process.env.PUBLIC_URL}/images/photo1.jpg` },
+                { id: 2, caption: "Sailaya Resort Bubble Bath", src: `${process.env.PUBLIC_URL}/images/photo2.jpg` },
+                { id: 3, caption: "MB Cove Calayo Nasugbu Batangas", src: `${process.env.PUBLIC_URL}/images/photo3.jpg` },
+                { id: 4, caption: "MES National Reading Month", src: `${process.env.PUBLIC_URL}/images/photo4.jpg` },
+                { id: 5, caption: "MES SPED Just Treat No Trick", src: `${process.env.PUBLIC_URL}/images/photo5.jpg` },
                 { id: 6, caption: "Baguio City", src: `${process.env.PUBLIC_URL}/images/photo6.jpg` },
-                { id: 7, caption: "Making Sand Castle", src: `${process.env.PUBLIC_URL}/images/photo7.jpg` },
-                { id: 8, caption: "Swimming at home", src: `${process.env.PUBLIC_URL}/images/photo8.jpg` }
+                { id: 7, caption: "MB Cove Calayo Nasugbu Batangas", src: `${process.env.PUBLIC_URL}/images/photo7.jpg` },
+                { id: 8, caption: "Buenavista 3", src: `${process.env.PUBLIC_URL}/images/photo8.jpg` }
               ].map((photo, index) => (
                 <motion.div
                   key={photo.id}
