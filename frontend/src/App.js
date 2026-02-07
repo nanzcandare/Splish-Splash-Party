@@ -4,7 +4,7 @@ import { Volume2, VolumeX, Sun, MapPin, MessageCircle, Waves, Clock, Calendar } 
 import './App.css';
 
 function App() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const audioRef = useRef(null);
   const { scrollYProgress } = useScroll();
@@ -94,7 +94,7 @@ function App() {
         data-testid="background-music"
         preload="auto"
       >
-        <source src="/audio/summer-sound.mp3" type="audio/mpeg" />
+        <source src={`${process.env.PUBLIC_URL}/audio/summer-sound.mp3`} type="audio/mpeg" />
       </audio>
 
       {/* Music Control Button */}
@@ -456,14 +456,14 @@ function App() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-testid="photo-gallery">
               {[
-                { id: 1, caption: "Testing the water", src: "/images/photo1.jpg" },
-                { id: 2, caption: "Bubble shower", src: "/images/photo2.jpg" },
-                { id: 3, caption: "Niamh swimming", src: "/images/photo3.jpg" },
-                { id: 4, caption: "Peter Pan and Tinkerbell", src: "/images/photo4.jpg" },
-                { id: 5, caption: "Just Treat No Trick", src: "/images/photo5.jpg" },
-                { id: 6, caption: "Baguio City", src: "/images/photo6.jpg" },
-                { id: 7, caption: "Making Sand Castle", src: "/images/photo7.jpg" },
-                { id: 8, caption: "Swimming at home", src: "/images/photo8.jpg" }
+                { id: 1, caption: "Testing the water", src: `${process.env.PUBLIC_URL}/images/photo1.jpg` },
+                { id: 2, caption: "Bubble shower", src: `${process.env.PUBLIC_URL}/images/photo2.jpg` },
+                { id: 3, caption: "Niamh swimming", src: `${process.env.PUBLIC_URL}/images/photo3.jpg` },
+                { id: 4, caption: "Peter Pan and Tinkerbell", src: `${process.env.PUBLIC_URL}/images/photo4.jpg` },
+                { id: 5, caption: "Just Treat No Trick", src: `${process.env.PUBLIC_URL}/images/photo5.jpg` },
+                { id: 6, caption: "Baguio City", src: `${process.env.PUBLIC_URL}/images/photo6.jpg` },
+                { id: 7, caption: "Making Sand Castle", src: `${process.env.PUBLIC_URL}/images/photo7.jpg` },
+                { id: 8, caption: "Swimming at home", src: `${process.env.PUBLIC_URL}/images/photo8.jpg` }
               ].map((photo, index) => (
                 <motion.div
                   key={photo.id}
